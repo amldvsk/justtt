@@ -1,0 +1,14 @@
+version: '3'
+services:    
+    postgres:
+        image: 'postgres:alpine'
+        volumes:
+            - './data/postgress/db_data_pg:/var/lib/postgresql'
+            - ./data/postgress/logs:/logs
+        ports:
+            - '5432:5432'
+        command: 'postgres -c logging_collector=on -c log_destination=stderr -c log_directory=/logs'
+        environment:
+            POSTGRES_DB: acch
+            POSTGRES_USER: acch
+            POSTGRES_PASSWORD: acch

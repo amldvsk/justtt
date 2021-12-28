@@ -1,0 +1,52 @@
+{
+  "name": "acch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --no-cache --runInBand  --forceExit",
+    "test-ci": "jest --runInBand --detectOpenHandles --forceExit",
+    "knex:migrate:make": "knex migrate:make -x js --knexfile server/database/knexfile.ts",
+    "knex:migrate:latest": "knex --knexfile server/database/knexfile.ts migrate:latest",
+    "knex:migrate:down": "knex --knexfile server/database/knexfile.ts migrate:down",
+    "knex:migrate:rollback": "knex --knexfile server/database/knexfile.ts migrate:rollback",
+    "knex:seed:make": "knex seed:make -x js --knexfile server/database/knexfile.ts",
+    "knex:seed:run": "knex seed:run --knexfile server/database/knexfile.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
+    "knex": "^0.95.14",
+    "pg": "^8.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/debug": "^4.1.5",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/faker": "^5.5.9",
+    "@types/jest": "^27.0.3",
+    "@types/joi": "^17.2.3",
+    "@types/node": "^14.14.7",
+    "@types/pg": "^7.14.6",
+    "@types/supertest": "^2.0.11",
+    "faker": "^5.5.3",
+    "jest": "^26.6.3",
+    "supertest": "^6.0.1",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  }
+}
